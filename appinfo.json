@@ -1,0 +1,18 @@
+{
+  "uuid": "b02bcf4e-40e2-4434-8eb5-2d72b8f6a56e",
+  "shortName": "Gett",
+  "longName": "GettMore companion",
+  "companyName": "Gett",
+  "versionLabel": "1.0",
+  "sdkVersion": "3",
+  "targetPlatforms": ["aplite", "basalt", "chalk"],
+  "watchapp": {
+    "watchface": false
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}
