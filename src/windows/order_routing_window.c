@@ -46,15 +46,16 @@ static void circle_layer_update_proc(Layer *layer, GContext *ctx) {
 }
 
 static void create_order() {
-  window_stack_remove(s_window, true);
-  ride_compass_push();
+  // window_stack_remove(s_window, true);
+  // ride_compass_push();
 }
 
 static void window_load(Window *window) {
-  window_set_background_color(window, GColorDarkGray);
+  window_set_background_color(window, GColorWhite);
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
-  APP_LOG(APP_LOG_LEVEL_DEBUG, "%i,%i,%i,%i", bounds.origin.x, bounds.origin.y, bounds.size.w, bounds.size.h);
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "%i,%i,%i,%i", bounds.origin.x, bounds.origin.y,
+                                              bounds.size.w, bounds.size.h);
 
   create_order();
 
@@ -78,7 +79,9 @@ static void window_load(Window *window) {
   layer_add_child(window_layer, text_layer_get_layer(s_text_layer));
 
   GRect text_layer_bounds = layer_get_bounds(text_layer_get_layer(s_text_layer));
-  s_progress_layer = progress_layer_create(GRect((bounds.size.w - PROGRESS_LAYER_WINDOW_WIDTH) / 2, text_layer_bounds.origin.y + 100, PROGRESS_LAYER_WINDOW_WIDTH, 6));
+  s_progress_layer = progress_layer_create(GRect((bounds.size.w - PROGRESS_LAYER_WINDOW_WIDTH) / 2,
+                                                 text_layer_bounds.origin.y + 100, 
+                                                 PROGRESS_LAYER_WINDOW_WIDTH, 6));
   progress_layer_set_progress(s_progress_layer, 0);
   progress_layer_set_corner_radius(s_progress_layer, 2);
   progress_layer_set_foreground_color(s_progress_layer, GColorWhite);

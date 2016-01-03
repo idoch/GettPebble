@@ -10,7 +10,8 @@
     "watchface": false
   },
   "appKeys": {
-    "dummy": 0
+    "KEY_PROFILE_INFO_NAME": 0,
+    "KEY_PROFILE_INFO_POINTS": 1
   },
   "resources": {
     "media": []
